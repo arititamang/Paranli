@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--CSS--!>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <form action="/action_page.php" >
+    <div class="row">
+      <div class="col-25">
+        <label for="statement">CPF/GPF Number</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="statement" name="cpf" placeholder="Your 14 digit statement">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="birthday">Date Of Birth</label>
+        </div>
+      <div class="col-75">
+  <input type="date" id="birthday" name="birthday">
+      </div>
+    </div>
+
+      <div class="row">
+      <div class="col-25">
+        <label for="month">Month</label>
+      </div>
+      <div class="col-75">
+        <select id="theinput" name="theinput">
+              <option value="0" selected>Select your Month</option>
+          <option value="january">January</option>
+          <option value="february">February</option>
+          <option value="march">March</option>
+           <option value="april">April</option>
+          <option value="may">May</option>
+          <option value="june">June</option>
+            <option value="july">July</option>
+          <option value="august">August</option>
+          <option value="september">September</option>
+           <option value="october">October</option>
+          <option value="november">November</option>
+          <option value="december">December</option>
+
+        </select>
+      </div>
+    </div>
+
+
+      <div class="row">
+      <div class="col-25">
+        <label for="year">Year</label>
+      </div>
+      <div class="col-75">
+          <select id="year"name="year">
+            <option value="0" selected>Select your year</option>
+          <option value=" 1990">1990</option>
+          <option value="1899">1899</option>
+          <option value="1899">1898</option>
+           <option value="1897">1897</option>
+          <option value="1898">1898</option>
+          <option value="1896">1896</option>
+            <option value="1895">1895</option>
+          <option value="august">August</option>
+          <option value="september">September</option>
+           <option value="october">October</option>
+          <option value="november">November</option>
+          <option value="december">December</option>
+        </select>
+      </div>
+    </div>
+
+<!--CAPTHH1--!>
+<form id="DemoForm" action="https://www.SnapHost.com/captcha/send.aspx" method="post" target="_top">
+<input id="skip_SnapHostID" name="skip_SnapHostID" type="hidden" value="DEMO12345678">
+<input id="skip_WhereToSend" name="skip_WhereToSend" type="hidden" value="support[[]]snaphost.com">
+<input id="skip_WhereToReturn" name="skip_WhereToReturn" type="hidden" value="https://www.snaphost.com/captcha/ThankYou.aspx?isSent=success">
+<input id="skip_Subject" name="skip_Subject" type="hidden" value="Subject test">
+
+<table border="0" cellpadding="5" cellspacing="0">
+<tbody><tr>
+    <td colspan="2" align="center">  </td>
+</tr>
+
+</tbody></table>
+<br>
+<table cellspacing="0" border="0" cellpadding="6">
+<tbody><tr>
+</tr>
+<tr style="background-color:#CACFD2; vertical-align:bottom;">
+    <td>
+        <input id="skip_CaptchaCode" name="skip_CaptchaCode" type="text" style="width:130px;height:48px;font-size:38px;" maxlength="6"><br>
+        <b>Enter Captcha</b>
+    </td>
+    <td>
+        <a href="#" onclick="return ReloadCaptchaImage('CaptchaImage');"><span style="font-size:12px;">Refresh</span></a><br>
+        <a href="https://www.SnapHost.com/captcha/ProCaptchaOverview.aspx"><img id="CaptchaImage" alt="Web Form Code" style="border-width:0px;" src="https://www.SnapHost.com/captcha/CaptchaImage.aspx?id=DEMO12345678"></a>
+
+   <!--JS--!>
+
+        <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script type="text/javascript">
+            function ReloadCaptchaImage(captchaImageId) {
+                var obj = document.getElementById(captchaImageId);
+                var src = '' + obj.src;
+                obj.src = '';
+                var date = new Date();
+                var pos = src.indexOf('&rad=');
+                if (pos >= 0) { src = src.substr(0, pos); }
+                obj.src = src + '&rad=' + date.getTime();
+                return false;
+            }
+            function ShowAndHide() {
+    var x = document.getElementById('SectionName');
+    if (x.style.display == 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+
+        </script>
+    </td>
+</tr>
+</tbody></table>
+<br><br>
+
+      <BUTTON ONCLICK="ShowAndHide()">Click me</BUTTON>
+  <DIV ID="SectionName" STYLE="display:none"><div class="row">
+      <div class="col-25">
+        <label for="otp">Enter OTP</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="otp" name="Otp" placeholder="Your OTP..">
+      </div>
+    </div></DIV>
+  <!--  <script>
+function ShowAndHide() {
+    var x = document.getElementById('SectionName');
+    if (x.style.display == 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</script>
+    <BUTTON ONCLICK="ShowAndHide()">Click me</BUTTON>
+  <DIV ID="SectionName" STYLE="display:none"><div class="row">
+      <div class="col-25">
+        <label for="otp">Enter OTP</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="otp" name="Otp" placeholder="Your OTP..">
+      </div>
+    </div></DIV>!-->
+
+
+<br>
+<input id="skip_DemoSubmit" name="skip_DemoSubmit" type="submit" value="Submit">
+  <br>
+</div>
+</div>
+</form>
+</div>
+</body>
+</html>
